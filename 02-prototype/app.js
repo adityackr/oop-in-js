@@ -45,10 +45,15 @@
 
 function Square(width) {
 	this.width = width;
+	this.getWidth = function () {
+		console.log('Width is ' + this.width);
+		// this.draw();
+	};
 }
 
 Square.prototype = {
 	draw: function () {
+		this.getWidth();
 		console.log('Draw');
 	},
 	toString: function () {
@@ -58,3 +63,9 @@ Square.prototype = {
 
 const sqr1 = new Square(10);
 const sqr2 = new Square(5);
+
+// console.log(Object.keys(sqr1));
+
+for (const i in sqr1) {
+	console.log(i);
+}
